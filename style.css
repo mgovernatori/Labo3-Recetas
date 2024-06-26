@@ -18,24 +18,26 @@ body{
     width: 100%;
     position: fixed;
     background: rgba(0, 0, 0, 0.459);
+    backdrop-filter: blur(5px);
 }
 
 .nav-item{
-    margin: 60px;
+    margin: 50px;
     padding: 10px;
-    color: #F6AE2D;
+    color: #F5BA41;
     transition: color 0.5s ease;
     font-size: 20px;
     font-weight: bold;
 }
 
 .nav-item:hover{
-    color: #ffcf75;
+    color: #fffcf7;
 }
 
 .logo img{
     width: auto;
     height: 30px;
+    border-radius: 3px;
 }
 
 /* CSS SEARCH Y PORTADA */
@@ -48,14 +50,14 @@ body{
     flex-direction: column;
     margin: auto;
     margin-top: 20px;
-    padding: 30px;
+    padding: 15px;
     width: 500px;
     border-radius: 15px;
 }
 
 #search{
     border-radius: 10px;
-    border: 3px solid #F6AE2D;
+    border: 3px solid #F5BA41;
     width: 65%;
     font-size: 18px;
     padding: 10px 20px;
@@ -63,7 +65,7 @@ body{
 }
 
 #btn-search{
-    background-color: #F6AE2D;
+    background-color: #F5BA41;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -79,10 +81,57 @@ body{
     background-position: center;
 }
 
+/* CSS PARA LAS POST CARD */
+
+.results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.results-card{
+    background-color: #fffef6;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.results-card:hover{
+    transform: scale(1.05);
+    transition: transform .5s ease;
+}
+
+.results-card img{
+    width: 200px;
+    height: 100%;
+    border-radius: 15px;
+    align-self: center;
+}
+
+.results-card a{
+    font-size: 18px;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+
 /* CSS PARA RECETAS DESTACADAS */
 
 .featured{
-    background-color: #da601e;
+    background-color: #a0793f;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -93,6 +142,12 @@ body{
     box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.75);
 }
 
+.featured h1{
+    text-align: center;
+    margin-top: 0;
+    color: white;
+}
+
 .feat-recipe{
     border: 1px solid rgb(102, 102, 102);
     background-color: #FCF1E1;
@@ -100,6 +155,7 @@ body{
     height: 150px;
     border-radius: 10px;
     padding: 10px;
+    margin: 3px;
 }
 
 .feat-desc{
@@ -126,43 +182,16 @@ footer{
     background-color: #364652;
     height: 200px;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
-/* CSS PARA LAS POST CARD */
-
-.results-card{
-    background-color: #fffef6;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+footer h2, h3{
+    padding-top: 10px;
     margin: 10px;
-    padding: 10px;
-    width: 300px;
-    display: none;
+    color: white;
 }
 
-.results-card:hover{
-    transform: scale(1.05);
-    transition: transform .5s ease;
-}
 
-.post-title {
-    font-size: 24px;
-    margin: 10px 0;
-}
-
-.results-content {
-    height: 130px;
-    font-size: 16px;
-    color: #313131;
-}
-
-.results-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-}
 
 /* colores
 #F6AE2D AMARILLITO
