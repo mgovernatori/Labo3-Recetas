@@ -1,3 +1,5 @@
+
+
 body{
     width: 100%;
     height: 100%;
@@ -9,17 +11,33 @@ body{
 
 /* CSS PARA NAV BAR */
 
+.icons{
+	position: absolute;
+	right: 10%;
+	color: #fff;
+	font-size: 28px;
+	cursor: pointer;
+	display: none;
+}
+
 .space-navbar{
-    display: flex;
+    position: fixed;
     margin: 0;
+    padding: 10px;
+    display: flex;
     align-items: center;
     justify-content: space-evenly;
     height: 80px;
     width: 100%;
-    position: fixed;
     background: rgba(0, 0, 0, 0.459);
     backdrop-filter: blur(5px);
+    z-index: 999;
 }
+
+#check{
+	display: none;
+}
+
 
 .nav-item{
     margin: 50px;
@@ -28,6 +46,7 @@ body{
     transition: color 0.5s ease;
     font-size: 20px;
     font-weight: bold;
+    z-index: 999;
 }
 
 .nav-item:hover{
@@ -39,6 +58,8 @@ body{
     height: 30px;
     border-radius: 3px;
 }
+
+
 
 /* CSS SEARCH Y PORTADA */
 
@@ -76,7 +97,7 @@ body{
 .image{
     background-image: url(imagenes/portada.jpg);
     width: 100%;
-    height: 480px;
+    height: 400px;
     background-size: cover;
     background-position: center;
 }
@@ -96,7 +117,7 @@ body{
 .results-card{
     background-color: #fffef6;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
     margin: 10px;
     padding: 10px;
     width: 300px;
@@ -165,7 +186,8 @@ body{
 .feat-desc a{
     color: black;
     font-size: 40px;
-    padding: 10px;
+    padding: 0;
+    text-decoration: underline;
 }
 
 .feat-desc p{
@@ -176,6 +198,7 @@ body{
     width: 200px;
     height: 100%;
     border-radius: 15px;
+    box-shadow: 0 2px 3px;
 }
 
 footer{
@@ -191,117 +214,178 @@ footer h2, h3{
     color: white;
 }
 
-@media (max-width: 1075px){
+@media (max-width: 1000px) {
     .feat-desc a{
         font-size: 30px;
     }
 }
 
-@media (max-width: 890px){
+
+@media (max-width: 880px) {
+    .icons{
+        display: inline-flex;
+    }
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+    .icons #close-icon {
+        display: none;
+    }
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		height: 0;
+		width: 100%;		
+		transition: .2s ease-in-out;
+		overflow: hidden;
+		background-color:#F5BA41;
+	}
+    #check:checked~.navbar{
+		height: 200px;
+	}
+    .navbar a{
+		display: block;
+		font-size: 20px;
+		margin: 0;
+		text-align: center;
+        color: black;
+        margin-top: 3px;
+	}
+
     .feat-recipe{
         height: 180px;
         margin: 5px;
     }
-}
-
-@media (max-width: 845px){
-    .feat-desc a{
-        font-size: 25px;
-    }
-}
-
-@media (max-width: 750px){
-    .feat-recipe img{
-        width: 150px;
-    }
-
-    .feat-recipe{
-        height: 150px;
-    }
-}
-
-@media (max-width: 750px){
-    .feat-recipe img{
-        width: 150px;
-    }
-
-    .feat-recipe{
-        height: 150px;
-    }
-}
-
-@media (max-width: 740px){
     .featured{
+        align-items: center;
+        width: 90%;
+        padding: 10px;
+    }
+    .feat-desc{
+        font-size: 18px;
+    }
+    .feat-desc a{
+        font-weight: 800;
+    }
+    .search-recipe{
         width: 80%;
     }
-}
-
-@media (max-width: 605px){
-    .feat-recipe img{
-        width: 130px;
-    }
-
-    .feat-recipe{
-        height: 130px;
+    .search-recipe::placeholder{
+        font-size: 10px;
     }
 }
 
-@media (max-width: 600px){
-    .feat-recipe{
-        height: 180px;
-    }
-
-    .feat-desc a{
-        font-size: 20px;
-    }
-
-    .feat-recipe img{
-        width: 160px;
-    }
-}
-
-@media (max-width: 535px){
+@media (max-width: 768px){
     .featured{
-        width: 85%;
+        align-items: center;
+        width: 90%;
+        padding: 10px;
+    }
+    .feat-desc{
+        height: fit-content;
+        width: 100%;
     }
 
+}
+
+@media (max-width: 680px){
     .feat-recipe{
         height: 160px;
     }
-
+    .feat-desc a{
+        font-size: 24px;
+        padding: 0;
+    }
+    .feat-desc p{
+        line-height: 15px;
+    }
     .feat-recipe img{
-        width: 140px;
+        width: 160px;
+    }
+    .results-card{
+        width: 200px;
+    }
+    footer h2, h3{
+        font-size: 16px;
     }
 }
 
-@media (max-width: 505px){
+@media (max-width: 500px){
+    .space-navbar{
+        height: 50px;
+    }
+    .image{
+        height: 250px;
+    }
     .featured {
-        width: 60%;
+        width: 80%;
     }
 
     .feat-recipe {
         height: 220px;
-        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
+        width: 90%;
     }
 
     .feat-recipe img {
-        width: 200px;
-        height: 150px;
+        width: 80%;
+        height: 80%;
         margin-bottom: 10px;
     }
 
     .feat-desc a {
         text-align: center;
-    }
-    
+        font-size: 18px;
+        padding: 0;
+    } 
     .feat-desc p {
         display: none;
     }
+    .results-card{
+        width: 40%;
+    }
+    .results-card img{
+        width: 90%;
+    }
 }
+
+@media (max-width: 375px){
+    .logo img{
+        width: 140px;
+    }
+    .results-card{
+        width: 80%;
+    }
+    .feat-recipe img{
+        width: 100%;
+    }
+    .feat-desc{
+        margin: 0;
+    }
+    #search{
+        width: 90%;
+        margin: 10px;
+    }
+    #btn-search{
+        width: 40%;
+        font-size: 14px;
+    }
+    footer h2, h3{
+        font-size: 14px;
+    }
+} 
+
+
+
+
 
 
 /* colores
